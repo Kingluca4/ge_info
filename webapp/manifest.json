@@ -57,6 +57,10 @@
         "settings": {
           "bundleName": "geinfo.geinfo.i18n.i18n"
         }
+      }, 
+      "itemsData": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri" : "model/filtered_data.json"
       }
     },
     "resources": {

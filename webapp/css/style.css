@@ -1,1 +1,11 @@
-/* Enter your custom styles here */
+.home_shell {
+    background-color: #6D4211;
+}
+
+.colorRunescapeHeader {
+    background-color: #382418 !important;
+}
+
+.colorRunescapeHeader>h2 {
+    color: #ffffff !important;
+}
