@@ -29,6 +29,9 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                // set the temp model
+                this.setModel(models.createTempModel(), "temp");
             }
         });
     }

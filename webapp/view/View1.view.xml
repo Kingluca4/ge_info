@@ -6,17 +6,17 @@
 	xmlns:fb="sap.ui.comp.filterbar"
 	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Page id="xpage" title="{i18n>title}">
-		<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onAvvioPress" filterChange=".restoreTable" afterVariantLoad=".onAfterVariantLoad" showClearOnFB="true" clear='.reset'>
+		<fb:FilterBar id="filterbar" persistencyKey="myPersKey" showFilterConfiguration="false" useToolbar="false" showGoOnFB="false" class="home_filter">
 			<fb:filterGroupItems>
-				<fb:FilterGroupItem groupName="searchFields" name="title" label="{i18n>Title}" visibleInFilterBar="true">
+				<fb:FilterGroupItem groupName="searchFields" name="title" label="{i18n>itemNameLabel}" visibleInFilterBar="true">
 					<fb:control>
-						<SearchField width="20%" showSearchButton="false" id="titles" placeholder="Cerca qui" liveChange="onChecknumber"/>
+						<SearchField width="20%" showSearchButton="false" id="searchField" liveChange="onSearchFieldLiveChange" placeholder="{i18n>itemNameLabel}" search="onSearch"/>
 					</fb:control>
 				</fb:FilterGroupItem>
 			</fb:filterGroupItems>
 		</fb:FilterBar>
 
-		<Table id="geItems" growing="true" growingThreshold="50" mode="MultiSelect" selectionChange="onRowPress" class="home_table" sticky="HeaderToolbar,ColumnHeaders"
+		<Table id="geItems" growing="true" growingThreshold="50" mode="MultiSelect" selectionChange="onSelectionChange" sticky="HeaderToolbar,ColumnHeaders"
 		inset="false"
 		items="{geItemsModel>/}">
 			<headerToolbar>
@@ -32,44 +32,45 @@
 			</headerToolbar>
 			<columns>
 				<Column
-				width="12em">
+				hAlign="Begin">
 					<Text text="{i18n>iconName}" />
 				</Column>
 				<Column
-				width="12em">
+				hAlign="Center">
 					<Text text="{i18n>itemsName}" />
 				</Column>
 				<Column
 				minScreenWidth="Tablet"
-				demandPopin="true">
+				demandPopin="true"
+				hAlign="Center">
 					<Text text="{i18n>status}" />
 				</Column>
 				<Column
 				minScreenWidth="Desktop"
 				demandPopin="true"
-				hAlign="End">
+				hAlign="Center">
 					<Text text="{i18n>equip}" />
 				</Column>
                 <Column
 				minScreenWidth="Desktop"
 				demandPopin="true"
-				hAlign="End">
+				hAlign="Center">
 					<Text text="{i18n>note}" />
 				</Column>
 			</columns>
 			<items>
-				<ColumnListItem vAlign="Middle" type="Navigation" press="onDetailPress" liveChange="onItemSelect">
+				<ColumnListItem vAlign="Middle" type="Navigation" press="onDetailPress" class="home_table">
 					<cells>
 						<Image
 						src="{geItemsModel>icon}"/>
 						<Text
-						text="{geItemsModel>name}" />
+						text="{geItemsModel>name}" class="textColor"/>
 						<Text
-						text="{geItemsModel>members}" />
+						text="{geItemsModel>members}" class="textColor"/>
 						<Text
-						text="{geItemsModel>equipable}" />
+						text="{geItemsModel>equipable}" class="textColor"/>
                         <Text
-						text="{geItemsModel>noteable}" />
+						text="{geItemsModel>noteable}" class="textColor"/>
 					</cells>
 				</ColumnListItem>
 			</items>

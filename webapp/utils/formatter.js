@@ -3,9 +3,10 @@ sap.ui.define([], function () {
 
     return {
 
-        formatImage: function(imageUrl) {
-            if (imageUrl) {
-                return `<img src="${imageUrl}" style="width:50px;height:50px" / >` ;
+        formatPriceImage: function(param) {
+            var link = $.sap.getModulePath("geinfo.geinfo", "/images/")
+            if (typeof param === "number") {
+                return link;
             } else {
                 // Provide a default image or an empty string if imageUrl is empty
                 return "";

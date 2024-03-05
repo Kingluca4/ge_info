@@ -1,3 +1,13 @@
+
+/* @font-face {
+    font-family: 'rsFont'; 
+    src: url('../fonts/rsChatFont.ttf') format('truetype'); 
+  }
+  
+  .sapUiBody {
+    font-family: 'rsFont', sans-serif !important; 
+  } */
+
 .home_shell {
     background-color: #6D4211;
 }
@@ -9,3 +19,42 @@
 .colorRunescapeHeader>h2 {
     color: #ffffff !important;
 }
+.home_filter{
+    background-color :#382418!important;
+    color: white !important;
+}
+
+.home_table{
+    background-color: rgba(60, 39, 11, 0.87) !important;
+}
+
+.textColor {
+    color: white !important;
+}
+.sapMListHdr {
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+  }
+
+  .sapMListTblSubCntHdr > .sapMListTblSubCntSpr, .sapMListTblSubCntRow > .sapMListTblSubCntHdr .sapMText, .sapMListTblSubCntRow > .sapMListTblSubCntHdr .sapMLabel {
+    color: white !important;
+    padding-top: 0;
+    display: inline;
+  }
+
+.sapMListTblSubRow {
+    background: rgba(60, 39, 11, 0.87) !important;
+}
+
+.sapMIBar-CTX .sapMTitle {
+    color: gold !important;
+    text-shadow: none;
+  }
+
+.sapMIBar.sapMHeader-CTX {
+    color: #1d2d3e;
+    background-color: #382418 !important;
+    filter: none;
+    background-image: "";
+}
+

@@ -87,6 +87,13 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "name": "RouteItem",
+          "pattern": "Detail/{id},{name},{members},{equipable},{noteable}",
+          "target": [
+            "TargetItem"
+          ]
         }
       ],
       "targets": {
@@ -96,6 +103,13 @@
           "clearControlAggregation": false,
           "viewId": "View1",
           "viewName": "View1"
+        },
+        "TargetItem": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Item",
+          "viewName": "Item"
         }
       }
     },
