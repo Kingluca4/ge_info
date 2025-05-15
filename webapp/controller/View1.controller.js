@@ -17,7 +17,8 @@ sap.ui.define([
             
             onInit: function () {
                 let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                oRouter.getRoute("RouteView1").attachPatternMatched(this.onRouteMatched, this); 
+                oRouter.getRoute("RouteView1").attachPatternMatched(this.onRouteMatched, this);
+                
             },
 
             onRouteMatched: function(oEvent, targetName) { 

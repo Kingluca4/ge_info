@@ -16,6 +16,13 @@
 			</fb:filterGroupItems>
 		</fb:FilterBar>
 
+		<core:HTML content='
+		&lt;audio controls autoplay loop&gt;
+			&lt;source src=&quot;audio/tradeparade.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+			Your browser does not support the audio element.
+		&lt;/audio&gt;
+		'/>
+
 		<Table id="geItems" growing="true" growingThreshold="50" mode="MultiSelect" selectionChange="onSelectionChange" sticky="HeaderToolbar,ColumnHeaders"
 		inset="false"
 		items="{geItemsModel>/}">
