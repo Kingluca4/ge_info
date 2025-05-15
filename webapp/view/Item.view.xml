@@ -86,6 +86,16 @@
 							<!-- Add more form elements for other properties as needed -->
 						</f:formElements>
 					</f:FormContainer>
+
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Item description">
+								<f:fields>
+									<Text id="descrText" text="{itemModel>/extract}" />
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
 				</f:Form>
 				
 		</Page>

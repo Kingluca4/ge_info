@@ -20,6 +20,7 @@ sap.ui.define([
                     oRouter.getRoute("RouteItem").attachPatternMatched(this.onRouteMatched, this);
 
                     this.getView().setModel(new JSONModel(), "priceModel");
+                    this.getView().setModel(new JSONModel(), "itemModel");
             },
 
             onRouteMatched: function(oEvent, targetName) { 
@@ -42,13 +43,36 @@ sap.ui.define([
 
                 oTemp.setProperty("/selectedItem", oSelectedItem);
                 this.getView().setModel(oTemp, "temp");
-                this.fetchPriceData(oSelectedItem.id);
+                this.getItemInfo(oSelectedItem.id, oSelectedItem.name);
+            },
+
+            formatNameIfNeeded: function(sName){
+                if (sName.includes(" ")) {
+                    // Replace all spaces with underscores
+                    sName = sName.replace(/ /g, "_");
+                }
+
+                return sName;
+            },
+
+            getItemInfo: async function(sId, sName){
+                await this.fetchPriceData(sId);
+                await this.fetchDescrData(this.formatNameIfNeeded(sName));
+            },
+
+            fetchDescrData: async function(sName){
+                const url = `https://oldschool.runescape.wiki/api.php?action=query&format=json&prop=extracts&exintro&explaintext&titles=${encodeURIComponent(sName)}`;
+                const res = await fetch(url);
+                const json = await res.json();
+                const pages = json.query.pages;
+                const page = Object.values(pages)[0];
+                this.getView().getModel("itemModel").setData(page);
             },
 
             fetchPriceData: function(itemId) {
-                // API endpoint for detailed item information
-                var apiUrl = "https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=" + itemId;
-            
+
+                 var apiUrl = "https://prices.runescape.wiki/api/v1/osrs/latest?id=" + itemId;
+
                 // Fetch data from the API
                 fetch(apiUrl, {
                     method: 'GET',
@@ -66,22 +90,15 @@ sap.ui.define([
                     })
                     .then(data => {
                         // Set the price data to the model
-                        this.getView().getModel("priceModel").setData(data);
+                        this.getView().getModel("priceModel").setData(data.data[itemId]);
             
                         // Update the binding path for High Price and Low Price Text elements
                         this.getView().byId("highPriceText").bindText({
-                            path: "priceModel>/item/high"
+                            path: "priceModel>/high"
                         });
             
                         this.getView().byId("lowPriceText").bindText({
-                            path: "priceModel>/item/low"
-                        });
-            
-                        this.getView().byId("description").bindText({
-                            path: "priceModel>/item/description"
-                        });
-                        this.getView().byId("currentPrice").bindText({
-                            path: "priceModel>/item/current/price"
+                            path: "priceModel>/low"
                         });
             
                         // Refresh the model to reflect the changes
