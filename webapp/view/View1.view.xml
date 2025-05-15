@@ -17,7 +17,7 @@
 		</fb:FilterBar>
 
 		<core:HTML content='
-		&lt;audio controls autoplay loop&gt;
+		&lt;audio id=&quot;bgmusic&quot; loop&gt;
 			&lt;source src=&quot;audio/tradeparade.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 			Your browser does not support the audio element.
 		&lt;/audio&gt;

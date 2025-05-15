@@ -18,7 +18,21 @@ sap.ui.define([
             onInit: function () {
                 let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.getRoute("RouteView1").attachPatternMatched(this.onRouteMatched, this);
-                
+
+                var that = this;
+
+                    // Attach listener for first user interaction (click/touch)
+                    document.addEventListener("click", function playMusicOnce() {
+                        var audio = document.getElementById("bgmusic");
+                        if (audio) {
+                        audio.play().catch(function (error) {
+                            console.warn("Autoplay failed:", error);
+                        });
+                        }
+
+                        // Remove the listener after first interaction
+                        document.removeEventListener("click", playMusicOnce);
+                    });
             },
 
             onRouteMatched: function(oEvent, targetName) { 
