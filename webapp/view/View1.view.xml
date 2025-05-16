@@ -6,12 +6,12 @@
 	xmlns:fb="sap.ui.comp.filterbar"
 	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	
-	<Page id="xpage">
+	<Page id="xpage" class="home_shell">
 
-		<VBox style="background-color: #6D4211; padding: 0; margin: 0;">
+		<VBox class="osrsIcon">
 		<Image
 			id="osrs"
-			src="images/osrs.png"
+			src="images/osrs.jpg"
 			width="256px"
 			height="256px"
 			style="display: block;" />
