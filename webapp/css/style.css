@@ -100,5 +100,5 @@ html[data-sap-ui-browser^="ff"].sap-desktop .sapFDynamicPage.sapFDynamicPageWith
 
 .sapMGrowingList {
     background-color: var(--sapList_Background);
-    margin-bottom: 10%;
+    margin-bottom: 15%;
 }
