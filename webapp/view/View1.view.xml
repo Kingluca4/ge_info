@@ -5,17 +5,17 @@
 	xmlns:f='sap.f'
 	xmlns:fb="sap.ui.comp.filterbar"
 	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	
-	<Page id="xpage" class="home_shell">
-
-		<VBox class="osrsIcon">
+			<VBox class="osrsIcon">
 		<Image
 			id="osrs"
-			src="images/osrs.jpg"
-			width="256px"
-			height="256px"
+			src="images/osrsbanner.jpg"
+			width="1200px"
+			height="auto"
 			style="display: block;" />
 		</VBox>	
+
+	<Page id="xpage" class="home_shell">
+
 
 		<fb:FilterBar id="filterbar" persistencyKey="myPersKey" showFilterConfiguration="false" useToolbar="false" showGoOnFB="false" class="home_filter">
 			<fb:filterGroupItems>
