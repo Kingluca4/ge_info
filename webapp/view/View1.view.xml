@@ -24,38 +24,7 @@
         fitContent="true"
         class="home_shell">
 
-        <!-- ✅ headerTitle must be wrapped in <f:title> -->
-        <f:title>
-            <f:DynamicPageTitle>
-                <f:content>
-                    <fb:FilterBar
-                        id="filterbar"
-                        persistencyKey="myPersKey"
-                        showFilterConfiguration="false"
-                        useToolbar="false"
-                        showGoOnFB="false"
-                        class="home_table">
-                        <fb:filterGroupItems>
-                            <fb:FilterGroupItem
-                                groupName="searchFields"
-                                name="title"
-                                label="{i18n>itemNameLabel}"
-                                visibleInFilterBar="true">
-                                <fb:control>
-                                    <SearchField
-                                        width="20%"
-                                        showSearchButton="false"
-                                        id="searchField"
-                                        liveChange="onSearchFieldLiveChange"
-                                        placeholder="{i18n>itemNameLabel}"
-                                        search="onSearch" />
-                                </fb:control>
-                            </fb:FilterGroupItem>
-                        </fb:filterGroupItems>
-                    </fb:FilterBar>
-                </f:content>
-            </f:DynamicPageTitle>
-        </f:title>
+
 
         <f:content>
             <core:HTML content='
@@ -80,6 +49,17 @@
                         <content>
                             <Title text="Grand Exchange Items" level="H2" />
                             <ToolbarSpacer />
+							
+										 
+							<SearchField
+                                        width="19%"
+                                        showSearchButton="false"
+                                        id="searchField2"
+                                        liveChange="onSearchFieldLiveChange"
+                                        placeholder="{i18n>itemNameLabel}"
+                                        search="onSearch" />
+							
+
                         </content>
                     </OverflowToolbar>
                 </headerToolbar>

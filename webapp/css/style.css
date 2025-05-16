@@ -8,8 +8,9 @@
     font-family: 'rsFont', sans-serif !important; 
   } */
 
-.home_shell {
-    background-color: #6D4211;
+
+.sapUiBody {
+  background: transparent !important;
 }
 
 .colorRunescapeHeader {
@@ -58,13 +59,43 @@
     background-image: "";
 }
 .home_shell {
-  background-color: #6D4211 !important;
+  
+    height: 100%;
+  margin: 0;
+  background-image: url("../images/gebackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .osrsIcon {
     color: #1d2d3e;
-    background-color: #382418 !important;
-      display: flex;
     
+      display: flex;
     align-items: center;
+}
+
+
+.sapUiGlobalBackgroundColor, .sapMShellGlobalInnerBackground {
+  background-color: transparent !important;
+}
+
+
+/*QUESTA RENDE TRANSPARENT FILTERBAR*/
+.sapFDynamicPageTitle {
+  z-index: 3;
+  position: relative;
+  min-height: 3rem;
+  padding: 0.5rem 2rem 0.5rem 3rem;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  box-sizing: border-box;
+  background: transparent !important;
+}
+
+.sapFDynamicPage .sapFDynamicPageContentWrapperStandard > .sapFDynamicPageContent, .sapFDynamicPage .sapFDynamicPageContentWrapperSolid > .sapFDynamicPageContent {
+  background: transparent !important;
 }
