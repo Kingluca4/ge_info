@@ -64,4 +64,7 @@
 .osrsIcon {
     color: #1d2d3e;
     background-color: #382418 !important;
+      display: flex;
+    
+    align-items: center;
 }

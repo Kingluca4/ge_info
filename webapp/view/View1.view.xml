@@ -5,13 +5,13 @@
 	xmlns:f='sap.f'
 	xmlns:fb="sap.ui.comp.filterbar"
 	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-			<VBox class="osrsIcon">
+			<VBox class="osrsIcon" >
 		<Image
 			id="osrs"
-			src="images/osrsbanner.jpg"
-			width="1200px"
+			src="images/rslogo.png"
+			width="1000px"
 			height="auto"
-			style="display: block;" />
+			style="display: block; center" />
 		</VBox>	
 
 	<Page id="xpage" class="home_shell">
