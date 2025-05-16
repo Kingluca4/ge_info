@@ -34,7 +34,7 @@
                         showFilterConfiguration="false"
                         useToolbar="false"
                         showGoOnFB="false"
-                        class="home_table">
+                        class="home_filter">
                         <fb:filterGroupItems>
                             <fb:FilterGroupItem
                                 groupName="searchFields"
