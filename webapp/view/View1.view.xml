@@ -5,7 +5,18 @@
 	xmlns:f='sap.f'
 	xmlns:fb="sap.ui.comp.filterbar"
 	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Page id="xpage" title="{i18n>title}">
+	
+	<Page id="xpage">
+
+		<VBox style="background-color: #6D4211; padding: 0; margin: 0;">
+		<Image
+			id="osrs"
+			src="images/osrs.png"
+			width="256px"
+			height="256px"
+			style="display: block;" />
+		</VBox>	
+
 		<fb:FilterBar id="filterbar" persistencyKey="myPersKey" showFilterConfiguration="false" useToolbar="false" showGoOnFB="false" class="home_filter">
 			<fb:filterGroupItems>
 				<fb:FilterGroupItem groupName="searchFields" name="title" label="{i18n>itemNameLabel}" visibleInFilterBar="true">

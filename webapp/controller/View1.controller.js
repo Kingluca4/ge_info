@@ -20,7 +20,6 @@ sap.ui.define([
                 oRouter.getRoute("RouteView1").attachPatternMatched(this.onRouteMatched, this);
 
                 var that = this;
-
                 document.addEventListener("click", function playMusicOnce() {
                     var audio = document.getElementById("bgmusic");
                     if (audio) {
