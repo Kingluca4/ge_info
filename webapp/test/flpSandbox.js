@@ -39,7 +39,7 @@ sap.ui.define([
 							"tiles": [{
 								"tileType": "sap.ushell.ui.tile.StaticTile",
 								"properties": {
-									"title": "Ge Info",
+									"title": "GRAND EXCHANGE",
 									"targetURL": "#geinfogeinfo-display"
 								}
 							}]
@@ -55,7 +55,7 @@ sap.ui.define([
 								"semanticObject": "geinfogeinfo",
 								"action": "display",
 								"description": "A Runescape Fiori Application.",
-								"title": "Ge Info",
+								"title": "GRAND EXCHANGE",
 								"signature": {
 									"parameters": {}
 								},

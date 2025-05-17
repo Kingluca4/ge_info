@@ -148,9 +148,7 @@
 }
 
 .osrsIcon {
-    color: #1d2d3e;
-    
-      display: flex;
+    display: flex;
     align-items: center;
 }
 
@@ -185,4 +183,8 @@ html[data-sap-ui-browser^="ff"].sap-desktop .sapFDynamicPage.sapFDynamicPageWith
 
 .sapFDynamicPage .sapFDynamicPageContentWrapperStandard > .sapFDynamicPageContent, .sapFDynamicPage .sapFDynamicPageContentWrapperSolid > .sapFDynamicPageContent {
   background: transparent !important;
+}
+
+.sapFDynamicPageContent, .sapFDynamicPageContentFitContainer {
+  padding: 0rem 2rem 0 2rem;
 }
