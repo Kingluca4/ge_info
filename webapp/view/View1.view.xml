@@ -27,13 +27,6 @@
 
 
         <f:content>
-            <core:HTML content='
-                &lt;audio id=&quot;bgmusic&quot; loop&gt;
-                    &lt;source src=&quot;audio/tradeparade.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
-                    Your browser does not support the audio element.
-                &lt;/audio&gt;
-            ' />
-
             <Table
                 id="geItems"
                 growing="true"
