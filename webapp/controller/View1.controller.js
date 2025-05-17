@@ -47,24 +47,6 @@ sap.ui.define([
                 this.getView().setModel(oModel, "geItemsModel");
             },
 
-
-            onAfterRendering: function () {
-                var that = this;
-                document.addEventListener("click", function playMusicOnce() {
-                    var audio = document.getElementById("bgmusic");
-                    if (audio) {
-                        audio.volume = 0.2;
-                        audio.play().catch(function (error) {
-                            console.warn("Autoplay failed:", error);
-                        });
-                        document.removeEventListener("click", playMusicOnce); // only run once
-                    } else {
-                        console.warn("Audio element not found.");
-                    }
-                });
-            },
-
-
             onSearchFieldLiveChange: function (oEvent) {
                 // Get the user input from the search field as it changes
                 var sQuery = oEvent.getParameter("newValue"),
