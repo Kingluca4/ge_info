@@ -31,7 +31,6 @@
                 id="geItems"
                 growing="true"
                 growingThreshold="50"
-                mode="MultiSelect"
                 selectionChange="onSelectionChange"
                 sticky="HeaderToolbar,ColumnHeaders"
                 inset="false"
