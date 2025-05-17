@@ -205,3 +205,25 @@ span.sapMBtnInner.sapMBtnEmphasized .sapUiIcon, span.sapMBtnInner.sapMBtnEmphasi
   font-family: 'runeFont', sans-serif !important;
   font-size: x-large !important; 
 }
+
+/* ITEM VIEW BAR AND TITLE */
+
+.sapUiFormResGrid.sapUiFormBackgrTranslucent {
+  background-color: #543724 ;
+  border-radius: 0;
+}
+
+.sapUiForm .sapUiFormTitle {
+  font-weight: normal;
+  color: gold;
+  height: 3rem;
+  line-height: 3rem;
+}
+
+.sapMLabel {
+  color: gold;
+}
+.sapMText {
+
+  color: gold;
+}

@@ -71,15 +71,15 @@
 						<f:formElements>
 							<f:FormElement label="High Price">
 								<f:fields>
-									<Text id="highPriceText" text="{priceModel>/data/2/high}" />
-									<Image src="{path: 'priceModel>/data/2/high', formatter: '.formatter.formatPriceImage'}" />
+									<Text text="{path: 'priceModel>/high', formatter: '.formatter.formatPrice'}" />
+									<Image src="{path: 'priceModel>/high', formatter: '.formatter.selectCoinIcon'}" />
 								</f:fields>
 							</f:FormElement>
 
 							<f:FormElement label="Low Price">
-								<f:fields>
-									<Text id="lowPriceText" text="{priceModel>/data/2/low}" />
-									<Image id=".." />
+							<f:fields>
+								<Text text="{path: 'priceModel>/low', formatter: '.formatter.formatPrice'}" />
+								<Image src="{path: 'priceModel>/low', formatter: '.formatter.selectCoinIcon'}" />
 								</f:fields>
 							</f:FormElement>
 
