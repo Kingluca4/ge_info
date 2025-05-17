@@ -58,8 +58,9 @@
 }
 
 .textColor {
-    color: white !important;
+  color: gold !important;
 }
+
 .sapMListHdr {
     border-top-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
@@ -186,4 +187,21 @@ html[data-sap-ui-browser^="ff"].sap-desktop .sapFDynamicPage.sapFDynamicPageWith
 
 .sapFDynamicPageContent, .sapFDynamicPageContentFitContainer {
   padding: 0rem 2rem 0 2rem;
+}
+
+/* THIS CLASS MANAGES THE ICON IN THE PLAYER STATS BUTTON */
+span.sapMBtnInner.sapMBtnEmphasized .sapUiIcon, span.sapMBtnInner.sapMBtnEmphasized sapMBtnIcon {
+  color: #bd771d;
+}
+/* THIS CLASS MANAGES THE FONTCOLOR IN THE PLAYER STATS BUTTON */
+.sapUiSizeCompact .sapMBtnContent {
+  line-height: 1.500rem;
+  color: gold  ;
+}
+
+/* THIS CLASS MANAGES THE FONT STYLE IN THE PLAYER STATS BUTTON */
+
+.sapMBtnInner.sapMBtnText {
+  font-family: 'runeFont', sans-serif !important;
+  font-size: x-large !important; 
 }

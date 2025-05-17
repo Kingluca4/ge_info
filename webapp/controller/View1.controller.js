@@ -50,6 +50,10 @@ sap.ui.define([
             }
             },
 
+            onNavigateToPlayers: function () {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("playersRoute"); // This matches the name in manifest.json
+            },
 
             onRouteMatched: function(oEvent, targetName) { 
                 var oArgs = oEvent.getParameter("arguments"),

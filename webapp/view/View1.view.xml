@@ -17,6 +17,9 @@
             style="display: block; margin: 0 auto;" />
     </VBox>
 
+
+
+
     <f:DynamicPage
         id="dynamicPage"
         headerSticky="true"
@@ -31,7 +34,6 @@
                 id="geItems"
                 growing="true"
                 growingThreshold="50"
-                mode="MultiSelect"
                 selectionChange="onSelectionChange"
                 sticky="HeaderToolbar,ColumnHeaders"
                 inset="false"
@@ -42,7 +44,16 @@
                         <content>
                             <Title text="Grand Exchange Items" level="H2" />
                             <ToolbarSpacer />
-							
+
+                            <Button
+                            id="playerStatsButton"
+                            icon="./icons/Skills_icon.png"
+                            iconDensityAware="false"
+                            text="Search Players' Stats"
+                            press="onNavigateToPlayers"
+                            class="colorRunescapeHeader osrsIcon colorRunescapeHeader" />
+
+							<ToolbarSpacer />
 										 
 							<SearchField
                                         width="19%"

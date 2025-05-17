@@ -94,7 +94,13 @@
           "target": [
             "TargetItem"
           ]
+        },
+        {
+              "pattern": "players",
+              "name": "playersRoute",
+              "target": "playersTarget"
         }
+
       ],
       "targets": {
         "TargetView1": {
@@ -110,6 +116,12 @@
           "clearControlAggregation": false,
           "viewId": "Item",
           "viewName": "Item"
+        },
+          "playersTarget": {
+          "viewName": "players",
+          "viewId": "players",
+          "viewLevel": 2,
+          "viewType": "XML"
         }
       }
     },

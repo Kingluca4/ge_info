@@ -1,0 +1,88 @@
+<mvc:View
+  controllerName="geinfo.geinfo.controller.players"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true"
+  xmlns:core="sap.ui.core">
+
+  <VBox class="sapUiSmallMargin">
+    <Input
+      id="inputPlayer"
+      placeholder="Enter player name"/>
+
+    <Button
+      text="Search"
+      press="onSearch"
+      class="sapUiSmallMarginTop" />
+
+    <List
+      items="{playerData>/players}"
+      class="sapUiResponsiveMargin">
+
+      <items>
+        <CustomListItem>
+          <VBox>
+
+            <HBox>
+              <Label text="Username:" class="sapUiSmallMarginEnd"/>
+              <Text text="{playerData>displayName}" />
+            </HBox>
+
+            <HBox>
+              <Label text="Combat Level:" class="sapUiSmallMarginEnd"/>
+              <Text text="{playerData>combatLevel}" />
+            </HBox>
+
+            <HBox>
+              <Label text="Experience:" class="sapUiSmallMarginEnd"/>
+              <Text text="{playerData>exp}" />
+            </HBox>
+<!-- 
+            <HBox>
+              <Label text="Agility:" class="sapUiSmallMarginEnd"/>
+              <Text text="{playerData>latestSnapshot/data/skills/agility/level}" />
+            </HBox>
+
+            <HBox>
+              <Label text="Attack:" class="sapUiSmallMarginEnd"/>
+              <Text text="{playerData>latestSnapshot/data/skills/attack/level}" />
+            </HBox>
+
+            <HBox>
+              <Label text="Construction:" class="sapUiSmallMarginEnd"/>
+              <Text text="{playerData>latestSnapshot/data/skills/construction/level}" />
+            </HBox> -->
+
+            <!-- Table for the rest of the skills -->
+            <Table
+              items="{skillsModel>/skills}"
+              inset="false"
+              headerText="Skills levels"
+              class="sapUiResponsiveMargin"
+              width="100%">
+
+              <columns>
+                <Column>
+                  <Text text="Skill" />
+                </Column>
+                <Column>
+                  <Text text="Level" />
+                </Column>
+              </columns>
+
+              <items>
+                <ColumnListItem>
+                  <cells>
+                    <Text text="{skillsModel>name}" />
+                    <Text text="{skillsModel>level}" />
+                  </cells>
+                </ColumnListItem>
+              </items>
+            </Table>
+
+          </VBox>
+        </CustomListItem>
+      </items>
+    </List>
+  </VBox>
+</mvc:View>
