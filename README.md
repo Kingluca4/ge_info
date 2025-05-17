@@ -9,7 +9,7 @@
 |**Service Type**<br>None|
 |**Service URL**<br>N/A
 |**Module Name**<br>ge_info|
-|**Application Title**<br>Ge Info|
+|**Application Title**<br>GRAND EXCHANGE|
 |**Namespace**<br>ge_info|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.120.3|

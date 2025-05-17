@@ -31,7 +31,25 @@ sap.ui.define([
 
                     document.removeEventListener("click", playMusicOnce);
                 });
+
             },
+            onAfterRendering: function () {
+            this._makeShellBgTransparent();
+            },
+
+            _makeShellBgTransparent: function() {
+            const bgDiv = document.querySelector(".sapShellBG.sapUiGlobalBackgroundImageForce");
+            if (bgDiv) {
+                bgDiv.style.backgroundColor = "transparent";
+                bgDiv.style.backgroundImage = "none";
+            } else {
+                // Retry a little later if not found yet
+                setTimeout(() => {
+                this._makeShellBgTransparent();
+                }, 100);
+            }
+            },
+
 
             onRouteMatched: function(oEvent, targetName) { 
                 var oArgs = oEvent.getParameter("arguments"),
