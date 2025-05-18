@@ -1,102 +1,70 @@
-<mvc:View controllerName="geinfo.geinfo.controller.item"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
-	xmlns:f='sap.ui.layout.form'
-	xmlns:fb="sap.ui.comp.filterbar"
-	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-		<Page id="xpage2" title="{i18n>title}" showNavButton="true" navButtonPress="onButtonClick" >
+<mvc:View
+  controllerName="geinfo.geinfo.controller.item"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.ui.layout.form">
 
+  <Page id="xpage2" title="{i18n>title}" showNavButton="true" class="colorRunescapeHeader" navButtonPress="onButtonClick">
+    <ScrollContainer class="colorRunescapeHeader">
+      <VBox class="sapUiLargeMargin">
+        
+		  	<!-- ITEM IMAGE -->
+		<HBox>
+			<VBox class="sapUiLargeMarginBeginEnd">
+				<HBox>
+					<Label text="{i18n>itemsImageDetail}" class="sapUiTinyMarginEnd"/>
+					<Image src="{temp>/selectedItem/icon}" />
+				</HBox>
 
-		<f:Form id="FormDisplay480_12120Dual"
-					editable="true">
-					<f:title>
-						<core:Title text="Item Detail" />
-					</f:title>
-					<f:layout>
-						<f:ResponsiveGridLayout
-							labelSpanXL="4"
-							labelSpanL="4"
-							labelSpanM="12"
-							labelSpanS="12"
-							adjustLabelSpan="false"
-							emptySpanXL="0"
-							emptySpanL="0"
-							emptySpanM="0"
-							emptySpanS="0"
-							columnsXL="2"
-							columnsL="2"
-							columnsM="2"
-							singleContainerFullSize="false" />
-					</f:layout>
-					<f:formContainers>
-						<f:FormContainer>
-							<f:formElements>
+				<!-- ITEM DETAILS -->
+				<HBox>
+					<Label text="{i18n>itemsNameDetail}" class="sapUiTinyMarginEnd"/>
+					<Text text="{temp>/selectedItems/name}" />
+				</HBox>
+				<HBox>
+					<Label text="{i18n>statusDetail}" class="sapUiTinyMarginEnd"/>
+					<Text text="{temp>/selectedItems/equipable}"/>
+				</HBox>
+				<HBox>
+					<Label text="{i18n>equipDetail}" class="sapUiTinyMarginEnd"/>
+					<Text text="{temp>/selectedItems/noteable}"/>
+				</HBox>
+				<HBox>
+					<Label text="{i18n>idDetail}" class="sapUiTinyMarginEnd"/>
+					<Text text="{temp>/selectedItems/id}"/>
+				</HBox>
+			</VBox>
 
-							    <f:FormElement label="Item Image">
-									<f:fields>
-										<Image src="{temp>/selectedItem/icon}"/>
-									</f:fields>
-								</f:FormElement>
+			 <!-- PRICE SECTION -->
+			<VBox class="sapUiLargeMarginBeginEnd">
+				<HBox class="sapUiSmallMarginEnd">
+					<Label text="{i18n>highPrice}" class="sapUiTinyMarginEnd"/>
+					<HBox>
+						<Text text="{path: 'priceModel>/high', formatter: '.formatter.formatPrice'}" class="sapUiTinyMarginEnd"/>
+						<Image src="{path: 'priceModel>/high', formatter: '.formatter.selectCoinIcon'}" />
+					</HBox>
+				</HBox>
+				<HBox>
+					<Label text="{i18n>lowPrice}" class="sapUiTinyMarginEnd"/>
+					<HBox>
+						<Text text="{path: 'priceModel>/low', formatter: '.formatter.formatPrice'}" class="sapUiTinyMarginEnd"/>
+						<Image src="{path: 'priceModel>/low', formatter: '.formatter.selectCoinIcon'}" />
+					</HBox>
+				</HBox>
+			</VBox>
+		</HBox>
 
-								<f:FormElement label="{i18n>itemsName}">
-									<f:fields>
-										<Text id="itemsNameText" text="{temp>/selectedItems/name}"  />
-									</f:fields>
-								</f:FormElement>
+       
 
-								<f:FormElement label="{i18n>status}">
-									<f:fields>
-										<Text id="equipText" text="{temp>/selectedItems/equipable}"  />
-									</f:fields>
-								</f:FormElement>
-
-								<f:FormElement label="{i18n>equip}">
-									<f:fields>
-										<Text id="noteText" text="{temp>/selectedItems/noteable}"  />
-									</f:fields>
-								</f:FormElement>
-
-								<f:FormElement label="{i18n>id}">
-									<f:fields>
-										<Text id="id" text="{temp>/selectedItems/id}"  />
-									</f:fields>
-								</f:FormElement>
-
-							</f:formElements>
-						</f:FormContainer>
-					</f:formContainers>
-
-					<f:FormContainer>
-						<f:formElements>
-							<f:FormElement label="High Price">
-								<f:fields>
-									<Text text="{path: 'priceModel>/high', formatter: '.formatter.formatPrice'}" />
-									<Image src="{path: 'priceModel>/high', formatter: '.formatter.selectCoinIcon'}" />
-								</f:fields>
-							</f:FormElement>
-
-							<f:FormElement label="Low Price">
-							<f:fields>
-								<Text text="{path: 'priceModel>/low', formatter: '.formatter.formatPrice'}" />
-								<Image src="{path: 'priceModel>/low', formatter: '.formatter.selectCoinIcon'}" />
-								</f:fields>
-							</f:FormElement>
-
-							<!-- Add more form elements for other properties as needed -->
-						</f:formElements>
-					</f:FormContainer>
-
-					<f:FormContainer>
-						<f:formElements>
-							<f:FormElement label="Item description">
-								<f:fields>
-									<Text id="descrText" text="{itemModel>/extract}" />
-								</f:fields>
-							</f:FormElement>
-						</f:formElements>
-					</f:FormContainer>
-				</f:Form>
-				
-		</Page>
+        <!-- DESCRIPTION -->
+        <VBox class="sapUiLargeMarginTop">
+          <Label text="{i18n>itemsDescr}" />
+          <Text text="{itemModel>/extract}" wrapping="true" />
+        </VBox>
+        
+      </VBox>
+    </ScrollContainer>
+  </Page>
 </mvc:View>

@@ -92,15 +92,6 @@ sap.ui.define([
                         // Set the price data to the model
                         this.getView().getModel("priceModel").setData(data.data[itemId]);
             
-                        // Update the binding path for High Price and Low Price Text elements
-                        this.getView().byId("highPriceText").bindText({
-                            path: "priceModel>/high"
-                        });
-            
-                        this.getView().byId("lowPriceText").bindText({
-                            path: "priceModel>/low"
-                        });
-            
                         // Refresh the model to reflect the changes
                         this.getView().getModel("priceModel").refresh();
                     })

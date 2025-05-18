@@ -19,8 +19,15 @@ sap.ui.define([
                 let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.getRoute("RouteView1").attachPatternMatched(this.onRouteMatched, this);
 
-                var that = this;
-                document.addEventListener("click", function playMusicOnce() {
+               this.playMusic();
+            },
+            
+            onAfterRendering: function () {
+                this._makeShellBgTransparent();
+            },
+
+            playMusic: function(){
+                 document.addEventListener("click", function playMusicOnce() {
                     var audio = document.getElementById("bgmusic");
                     if (audio) {
                     audio.volume = 0.2; // 🔉 Set volume (range is 0.0 to 1.0)
@@ -31,10 +38,6 @@ sap.ui.define([
 
                     document.removeEventListener("click", playMusicOnce);
                 });
-
-            },
-            onAfterRendering: function () {
-            this._makeShellBgTransparent();
             },
 
             _makeShellBgTransparent: function() {
