@@ -100,30 +100,37 @@ sap.ui.define([
                     });
             },
             
-                    setPriceImage: function(amount) {
-                        // Get the Image control
-                        var imageControl = this.getView().byId("highPriceImage");
-                    
-                        // Set the image source based on the amount
-                        if (amount > 100000) {
-                            var imagePath = $.sap.getModulePath("geinfo.geinfo", "/images/highprice.png");
-                            imageControl.setSrc(imagePath);
-                        } else {
-                            var imagePath = $.sap.getModulePath("geinfo.geinfo", "/images/lowpriceprice.png");
-                            imageControl.setSrc(imagePath);
-                        }
-                    },
-
-                    onExit: function () {
-                        // Clear the data when leaving the view
-                        this.getView().getModel("priceModel").setData({});
-                    },
-
-            onButtonClick: function(){
-                
-                let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                oRouter.navTo("RouteView1");
+            setPriceImage: function(amount) {
+                // Get the Image control
+                var imageControl = this.getView().byId("highPriceImage");
+            
+                // Set the image source based on the amount
+                if (amount > 100000) {
+                    var imagePath = $.sap.getModulePath("geinfo.geinfo", "/images/highprice.png");
+                    imageControl.setSrc(imagePath);
+                } else {
+                    var imagePath = $.sap.getModulePath("geinfo.geinfo", "/images/lowpriceprice.png");
+                    imageControl.setSrc(imagePath);
+                }
             },
+
+            onExit: function () {
+                // Clear the data when leaving the view
+                this.getView().getModel("priceModel").setData({});
+            },
+
+            onNavBack: function () {
+            let oHistory = sap.ui.core.routing.History.getInstance(),
+                sPreviousHash = oHistory.getPreviousHash();
+
+                if (sPreviousHash !== undefined) {
+                    window.history.go(-1);
+                } else {
+                    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                    oRouter.navTo("RouteView1", {}, true); // 'true' replaces history entry
+                }
+            }
+
 
         });
     });

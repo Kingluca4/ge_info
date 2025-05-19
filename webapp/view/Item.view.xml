@@ -6,7 +6,7 @@
   xmlns:core="sap.ui.core"
   xmlns:f="sap.ui.layout.form">
 
-  <Page id="xpage2" title="{i18n>title}" showNavButton="true" class="colorRunescapeHeader" navButtonPress="onButtonClick">
+  <Page id="xpage2" title="{i18n>title}" showNavButton="true" class="colorRunescapeHeader" navButtonPress=".onNavBack">
     <ScrollContainer class="colorRunescapeHeader">
       <VBox class="sapUiLargeMargin">
         

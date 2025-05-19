@@ -108,14 +108,16 @@
           "transition": "slide",
           "clearControlAggregation": false,
           "viewId": "View1",
-          "viewName": "View1"
+          "viewName": "View1",
+          "viewLevel": 1
         },
         "TargetItem": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
           "viewId": "Item",
-          "viewName": "Item"
+          "viewName": "Item",
+          "viewLevel": 2
         },
           "playersTarget": {
           "viewName": "players",
